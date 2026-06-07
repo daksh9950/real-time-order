@@ -1,6 +1,7 @@
 const express = require('express');
 const { createServer } = require('http');
 const { Server } = require('socket.io');
+const cors = require('cors');
 const errorHandler = require('./middleware/error.middleware');
 const orderRoutes = require('./routes/order.routes');
 
@@ -14,6 +15,7 @@ const io = new Server(httpServer, {
   },
 });
 
+app.use(cors());
 app.use(express.json());
 
 app.get('/health', (req, res) =>

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: 'https://real-time-order-777r.onrender.com/api',
 });
 
 export const fetchOrders = () =>
